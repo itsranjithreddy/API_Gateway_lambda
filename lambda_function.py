@@ -6,6 +6,7 @@ import ast
 from decimal import Decimal
 
 # TODO: Convert this lambda function to use SAM for dev/test/deployment
+# adding these feilds in environmental variables
 endpoint=os.environ['endpoint']
 username = os.environ['username']
 password = os.environ['password']
