@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+        <title>average stay duration</title>
+        
+        
+<head>      
+<style>
+table, td {
+border-collapse: collapse;
+border: 1px solid #000;
+}
+
+thead {
+display: table;
+width: 100%;
+}
+
+tbody {
+display: block;
+max-height: calc(100vh - 240px);
+overflow-y: scroll;
+}
+
+th, td {
+width: 33.33%;
+padding: 5px;
+word-break: break-all;
+}
+
+tr {
+display: table;
+width: 100%;
+box-sizing: border-box;
+}
+
+td, th {
+text-align: center;
+border-bottom: none;
+border-left: none;
+}
+.custom-table {
+border-collapse: collapse;
+width: 70%;
+margin-top: 10px;
+}
+
+.custom-table td, .custom-table th {
+border: 1px solid #ddd;
+padding: 8px;
+}
+
+*::-webkit-scrollbar {
+ width: 3px;
+}
+*::-webkit-scrollbar-track {
+ background: #f1f1f1;
+}
+*::-webkit-scrollbar-thumb {
+ background: $color-orange1;
+}
+*::-webkit-scrollbar-thumb:hover {
+ background: #555;
+}
+
+.custom-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.custom-table tr:hover {background-color: #ddd;}
+
+.custom-table th {
+padding-top: 12px;
+padding-bottom: 12px;
+/* text-align: left; */
+background-color: orange;
+color: white;
+}
+.main-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.custom-label {
+font-size:28px;
+font-weight: 500;
+opacity: 0.7;
+}
+.custom-value {
+font-size: 22px;
+font-weight: bold;
+opacity: 1;
+}
+
+.header {
+    background: orange;
+    height: 75px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+body {
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+</head>
+
+<body>
+
+        <div class="header">
+            <h1>Daily average visitors duration</h1>            
+        </div>
+        <div class="main-content">
+<div>
+    
+<div>
+<span class="custom-label">Tenant Name:</span>
+<span class="custom-value">{{tenant_name}}</span>
+</div>
+
+<div>
+<span class="custom-label">Tenant ID:</span>
+<span class="custom-value">{{tenant_id}}</span>
+
+</div>
+</div>
+
+<table class="custom-table">
+<thead>
+<th>visitor</th>
+<th>visited date</th>
+<th>Visitor_duration_in_min</th>
+</thead>
+<tbody>
+    {% for tenant in tenant_data %}
+    <tr>
+           
+            <td>{{tenant.Visitor}}</td>
+            <td>{{tenant.Visited_date}}</td>
+            <td>{{tenant.Visitor_duration_in_min}}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+</div>
+
+</body>
+</html>
+
+
