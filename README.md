@@ -1,3 +1,3 @@
 # API_Gateway_lambda
 
-Establishing a proxy connection between Lambda and API Gateway.
+Integrating AWS Lambda function and API gateway to display customer analysis.
